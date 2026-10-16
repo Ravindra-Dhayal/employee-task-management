@@ -50,7 +50,5 @@ export const errorHandler = (err, req, res, next) => {
 
   const body = { success: false, message };
   if (details) body.details = details;
-  if (env.nodeEnv === 'development' && statusCode === 500) body.stack = err.stack;
-
   res.status(statusCode).json(body);
 };

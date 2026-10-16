@@ -7,3 +7,6 @@ export const EMPLOYEE_STATUS = {
 };
 
 export const EMPLOYEE_STATUS_LIST = Object.values(EMPLOYEE_STATUS);
+
+export const PRIORITIES = ['Low', 'Medium', 'High', 'Critical'];
+export const TASK_STATUSES = ['Todo', 'In Progress', 'Completed', 'Cancelled'];

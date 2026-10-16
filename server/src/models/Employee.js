@@ -23,6 +23,7 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Full name is required'],
       trim: true,
+      set: (value) => String(value || '').trim().replace(/\s+/g, ' '),
       minlength: [2, 'Full name must be at least 2 characters'],
       maxlength: [100, 'Full name cannot exceed 100 characters'],
     },
@@ -67,6 +68,7 @@ const employeeSchema = new mongoose.Schema(
       },
       default: EMPLOYEE_STATUS.ACTIVE,
     },
+    activeTaskCount: { type: Number, default: 0, min: 0, max: 3 },
     skills: {
       type: [String],
       default: [],
